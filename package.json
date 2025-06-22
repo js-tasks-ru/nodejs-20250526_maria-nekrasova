@@ -20,9 +20,9 @@
     "@nestjs/passport": "^11.0.5",
     "@nestjs/platform-express": "^10.0.0",
     "@nestjs/platform-socket.io": "^10.4.15",
-    "@nestjs/serve-static": "^4.0.2",
+    "@nestjs/serve-static": "^5.0.3",
     "@nestjs/swagger": "^8.1.0",
-    "@nestjs/typeorm": "^10.0.0",
+    "@nestjs/typeorm": "^10.0.2",
     "@nestjs/websockets": "^10.4.15",
     "@types/bcrypt": "^5.0.2",
     "@types/passport-github2": "^1.2.9",
@@ -43,7 +43,7 @@
     "socket.io": "^4.8.1",
     "socket.io-client": "^4.8.1",
     "sqlite3": "^5.1.7",
-    "typeorm": "^0.3.20",
+    "typeorm": "^0.3.25",
     "uuid": "^11.1.0"
   },
   "devDependencies": {
