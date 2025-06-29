@@ -2,20 +2,34 @@ import { Injectable, NotFoundException } from "@nestjs/common";
 import { CreateTaskDto } from "./dto/create-task.dto";
 import { UpdateTaskDto } from "./dto/update-task.dto";
 import { InjectModel } from "@nestjs/mongoose";
-import { Task } from "./schemas/task.schema";
+import { Task, TaskDocument } from "./schemas/task.schema";
 import { Model, ObjectId } from "mongoose";
 
 @Injectable()
 export class TasksService {
-  constructor(@InjectModel(Task.name) private TaskModel: Model<Task>) {}
+  constructor(@InjectModel(Task.name) private taskModel: Model<TaskDocument>) {}
 
-  create(createTaskDto: CreateTaskDto) {}
+  async create(dto: CreateTaskDto): Promise<Task> {
+    return this.taskModel.create(dto);
+  }
 
-  async findAll() {}
+  async findAll(): Promise<Task[]> {
+    return this.taskModel.find().exec();
+  }
 
-  async findOne(id: ObjectId) {}
+  async findOne(id: string): Promise<Task> {
+    return this.taskModel.findById(id).exec();
+  }
 
-  async update(id: ObjectId, updateTaskDto: UpdateTaskDto) {}
+  async update(id: string, dto: UpdateTaskDto): Promise<Task> {
+    const task = await this.taskModel.findByIdAndUpdate(id, dto, { new: true, runValidators: true }).exec();
+    if (!task) throw new NotFoundException('Task not found');
+    return task;
+  }
 
-  async remove(id: ObjectId) {}
+  async remove(id: string): Promise<{ message: string }> {
+    const result = await this.taskModel.findByIdAndDelete(id).exec();
+    if (!result) throw new NotFoundException('Task not found');
+    return { message: 'Task not found' };
+  }
 }

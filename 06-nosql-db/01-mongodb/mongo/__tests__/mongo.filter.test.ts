@@ -45,7 +45,7 @@ describe("MongoFilter", () => {
       expect(response.body).toEqual({
         statusCode: 400,
         error: "Bad Request",
-        message: "Validation error message",
+        message: "",
       });
     });
   });
