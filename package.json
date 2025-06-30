@@ -22,7 +22,7 @@
     "@nestjs/platform-socket.io": "^10.4.15",
     "@nestjs/serve-static": "^4.0.2",
     "@nestjs/swagger": "^8.1.0",
-    "@nestjs/typeorm": "^10.0.0",
+    "@nestjs/typeorm": "^10.0.2",
     "@nestjs/websockets": "^10.4.15",
     "@types/bcrypt": "^5.0.2",
     "@types/passport-github2": "^1.2.9",
@@ -31,8 +31,8 @@
     "@types/passport-local": "^1.0.38",
     "bcrypt": "^5.1.1",
     "class-transformer": "^0.5.1",
-    "class-validator": "^0.14.1",
-    "mongoose": "^8.9.5",
+    "class-validator": "^0.14.2",
+    "mongoose": "^8.16.1",
     "passport": "^0.7.0",
     "passport-github2": "^0.1.12",
     "passport-google-oauth20": "^2.0.0",
@@ -43,7 +43,7 @@
     "socket.io": "^4.8.1",
     "socket.io-client": "^4.8.1",
     "sqlite3": "^5.1.7",
-    "typeorm": "^0.3.20",
+    "typeorm": "^0.3.25",
     "uuid": "^11.1.0"
   },
   "devDependencies": {
