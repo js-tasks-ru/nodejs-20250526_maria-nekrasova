@@ -1,0 +1,18 @@
+{
+  "entryFile": "main",
+  "sourceRoot": ".",
+  "compilerOptions": {
+    "tsConfigPath": "./tsconfig.json",
+    "assets": [
+      {
+        "include": "client/**/*.*",
+        "outDir": "dist/"
+      },
+      {
+        "include": "auth/client/**/*.*",
+        "outDir": "dist/"
+      }
+    ],
+    "watchAssets": true
+  }
+}

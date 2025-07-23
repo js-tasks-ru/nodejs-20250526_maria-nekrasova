@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat</title>
+    <link rel="stylesheet" href="styles/chat.css" />
+  </head>
+  <body>
+    <div class="chat-container">
+      <header class="chat-header">
+        <h1>Chat Room</h1>
+        <div class="user-info">
+          <span id="username-display"></span>
+          <button
+            id="logout-btn"
+            onclick="localStorage.removeItem('token'); window.location.href='/';"
+          >
+            Logout
+          </button>
+        </div>
+      </header>
+
+      <div class="chat-messages" id="messages"></div>
+
+      <form class="chat-form" id="chat-form">
+        <input
+          type="text"
+          id="msg"
+          placeholder="Type a message..."
+          required
+          autocomplete="off"
+        />
+        <button type="submit">Send</button>
+      </form>
+    </div>
+    <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+    <script src="scripts/chat.js"></script>
+  </body>
+</html>
