@@ -13,11 +13,11 @@ export class UsersService {
     return this.userRepository.findOneBy({ id });
   }
 
-  create(payload: Partial<User>) {
-    const user = new User();
-    user.id = payload.id;
-    user.displayName = payload.displayName;
-    user.avatar = payload.avatar;
+  async create(userData: Partial<User>) {
+    if (!userData.id) {
+      throw new Error('User id is required');
+    }
+    const user = this.userRepository.create(userData);
     return this.userRepository.save(user);
   }
 }
